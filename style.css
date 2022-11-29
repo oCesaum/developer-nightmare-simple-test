@@ -283,7 +283,7 @@ stop {
 }
 
 .rotate-175 {
-  rotate: 175deg !important;
+  rotate: -175deg !important;
   transition: all 1.5s;
 }
 
