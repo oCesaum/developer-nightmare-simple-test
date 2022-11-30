@@ -278,36 +278,32 @@ stop {
 }
 
 .rotate-0 {
-  rotate: 0deg !important;
+  transform: rotate(0deg) !important;
   transition: all 1.5s;
 }
 
 .rotate-175 {
-  rotate: -175deg !important;
+  transform: rotate(-175deg) !important;
+  /* rotate: -175deg !important; */
   transition: all 1.5s;
 }
 
-.rotate-15 {
-  rotate: 15deg;
+.rotate-15 {  
+  transform: rotate(0deg) !important;
+  /* rotate: 15deg; */
   transition: all 1.5s;
 }
 
 .rotate-135 {
-  rotate: 135deg;
+  transform: rotate(120deg) !important;
+  /* rotate: 135deg; */
   transition: all 1.5s;
 }
 
 .rotate-255 {
-  rotate: 255deg;
+  transform: rotate(235deg) !important;
+  /* rotate: 255deg; */
   transition: all 1.5s;
-}
-
-.rotate-container {
-  animation-name: rotate-container;
-  animation-duration: 1.5s;
-  transition-timing-function: linear;
-}
-@keyframes rotate-container {
 }
 
 .blur-container {
@@ -317,11 +313,11 @@ stop {
 }
 @keyframes blur-container {
   15% {
-    filter: blur(5px);
+    filter: blur(7px);
   }
 
   70% {
-    filter: blur(3px);
+    filter: blur(4px);
   }
 
   100% {
