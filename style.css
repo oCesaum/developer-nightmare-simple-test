@@ -219,6 +219,11 @@ stop {
   width: 500px;
 }
 
+.right-items-container {
+  display: flex;
+  overflow: hidden;
+}
+
 .items-couch-container {
   font-size: 20px;
   padding: 5px;
@@ -226,8 +231,24 @@ stop {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='1' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
+.blue #items-couch-container-1 {
+  margin-left: 0;
+  transition: all 1.5s;
+}
+
+.yellow #items-couch-container-1 {
+  margin-left: -500px;
+  transition: all 1.5s;
+}
+
+.red #items-couch-container-1 {
+  margin-left: -1000px;
+  transition: all 1.5s;
+}
+
 .couch-items {
   margin: 10px;
+  width: 470px;
   color: var(--gray);
   display: flex;
   justify-content: space-between;
@@ -278,31 +299,27 @@ stop {
 }
 
 .rotate-0 {
-  transform: rotate(0deg) !important;
+  transform: rotate(0deg);
   transition: all 1.5s;
 }
 
-.rotate-175 {
-  transform: rotate(-175deg) !important;
-  /* rotate: -175deg !important; */
+.rotate-90 {
+  transform: rotate(-90deg);
   transition: all 1.5s;
 }
 
-.rotate-15 {  
-  transform: rotate(0deg) !important;
-  /* rotate: 15deg; */
+.rotate-275 {
+  transform: rotate(-275deg);
   transition: all 1.5s;
 }
 
 .rotate-135 {
-  transform: rotate(120deg) !important;
-  /* rotate: 135deg; */
+  transform: rotate(120deg);
   transition: all 1.5s;
 }
 
 .rotate-255 {
-  transform: rotate(235deg) !important;
-  /* rotate: 255deg; */
+  transform: rotate(235deg);
   transition: all 1.5s;
 }
 
@@ -312,12 +329,30 @@ stop {
   transition-timing-function: linear;;
 }
 @keyframes blur-container {
-  15% {
-    filter: blur(7px);
+  0% {
+    filter: blur(5px);
   }
 
   70% {
-    filter: blur(4px);
+    filter: blur(3px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+.light-blur-container {
+  animation-name: light-blur-container;
+  animation-duration: 1.5s;
+  transition-timing-function: linear;;
+}
+@keyframes light-blur-container {
+  0% {
+    filter: blur(3px);
+  }
+
+  99% {
+    filter: blur(1px);
   }
 
   100% {
