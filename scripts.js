@@ -4,9 +4,9 @@ function changeSelected(e) {
     document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
     document.querySelector('.right-items-container').classList.toggle("light-blur-container");
 
+    //muda as casses que rotacionam os sofás
     document.querySelector('#couch-rotable-1').removeAttribute("class")
     document.querySelector('#couch-rotable-1').classList.add("couch-rotable-1", "rotate-0");
-
     document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-275")
     document.querySelector('#couch-rotable-2').classList.add("rotate-90")
     document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-90")
@@ -34,15 +34,13 @@ function changeSelected(e) {
     document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
     document.querySelector('.right-items-container').classList.toggle("light-blur-container");
 
+    //muda as casses que rotacionam os sofás
     document.querySelector('#couch-rotable-2').removeAttribute("class")
     document.querySelector('#couch-rotable-2').classList.add("couch-rotable-2", "rotate-0");
-
     document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-90")
     document.querySelector('#couch-rotable-1').classList.add("rotate-275")
     document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-275")
     document.querySelector('#couch-rotable-3').classList.add("rotate-90")
-
-    document.querySelector('#main-bg').removeAttribute("class")
 
     document.querySelector('#main-bg').removeAttribute("class")
     document.querySelector('#main-bg').classList.add("main-bg", "rotate-135");
@@ -66,16 +64,13 @@ function changeSelected(e) {
     document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
     document.querySelector('.right-items-container').classList.toggle("light-blur-container");
 
+    //muda as casses que rotacionam os sofás
     document.querySelector('#couch-rotable-3').removeAttribute("class")
     document.querySelector('#couch-rotable-3').classList.add("couch-rotable-3", "rotate-0");
-
     document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-275")
     document.querySelector('#couch-rotable-1').classList.add("rotate-90")
     document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-90")
     document.querySelector('#couch-rotable-2').classList.add("rotate-275")
-
-    document.querySelector('#main-bg').removeAttribute("class")
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-0");
 
     document.querySelector('#main-bg').removeAttribute("class")
     document.querySelector('#main-bg').classList.add("main-bg", "rotate-255");

@@ -355,10 +355,6 @@ stop {
     filter: blur(3px);
   }
 
-  99% {
-    filter: blur(1px);
-  }
-
   100% {
     filter: blur(0px);
   }
