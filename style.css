@@ -96,8 +96,8 @@ stop {
   background: var(--gree-alpha);
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
-  left: 330px;
-  top: 75px;
+  left: 295px;
+  top: 20px;
 }
 .yellow .object-1 {
   width: 55px;
@@ -105,8 +105,8 @@ stop {
   background: var(--yellow-alpha);
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
-  left: 260px;
-  top: 75px;
+  left: 340px;
+  top: 0px;
 }
 .red .object-1 {
   width: 55px;
@@ -114,15 +114,17 @@ stop {
   background: var(--purple-alpha);
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
-  left: 260px;
-  top: 75px;
+  left: 295px;
+  top: 20px;
 }
 
-.object-1 p {
+.object-1::before {
+  content: "";
+  display: inline-block;
   width: 55px;
   height: 55px;
   position: relative;
-  top: -16px;
+  top: -4px;
   background: rgba(0, 0, 0, 0%);
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23313131FF' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 }
@@ -134,7 +136,7 @@ stop {
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
   left: 50px;
-  top: 370px;
+  top: 215px;
 }
 .yellow .object-2 {
   width: 55px;
@@ -142,8 +144,8 @@ stop {
   background: var(--blue-alpha);
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
-  left: 55px;
-  top: 330px;
+  left: 120px;
+  top: 175px;
 }
 .red .object-2 {
   width: 55px;
@@ -152,14 +154,16 @@ stop {
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
   left: 55px;
-  top: 330px;
+  top: 220px;
 }
 
-.object-2 p {
+.object-2::before {
+  content: "";
+  display: inline-block;
   width: 55px;
   height: 55px;
   position: relative;
-  top: -15px;
+  top: -4px;
   background: rgba(0, 0, 0, 0%);
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23313131FF' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 }
