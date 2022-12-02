@@ -36,12 +36,40 @@ html {
   translate: -45px;
 }
 
-.left-title {
-  color: var(--light-gray);
-  max-width: 125px;
+.left-title-container {
+  display: flex;
+  grid-template-columns: 150px 100px;
+  max-width: 150px;
+  height: 100px;
+  overflow: hidden;
   position: absolute;
   top: 100px;
   left: 40px;
+}
+
+.left-title-1, .left-title-2, .left-title-3 {
+  color: var(--light-gray);
+  width: 150px;
+  height: 100px;
+  display: block;
+  transition: all 1.5s;
+}
+
+.left-title-1 h1, .left-title-2 h1, .left-title-3 h1 {
+  width: 150px;
+  height: 100px;
+}
+
+.blue .left-title-1 {
+  margin-left: 0px;
+}
+
+.yellow .left-title-1 {
+  margin-left: -150px;
+}
+
+.red .left-title-1 {
+  margin-left: -300px;
 }
 
 .main-bg{
