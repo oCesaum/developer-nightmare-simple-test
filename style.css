@@ -1,4 +1,5 @@
 :root {
+  /* cores básicas */
   --blue: #228be6;
   --dark-blue: #0d0099;
   --yellow: #fbca05;
@@ -6,10 +7,12 @@
   --red: #e64980;
   --dark-red: #a30808;
   --purple: #8660f3;
-  --gray: #9d9d9d;
-  --light-gray: #efefef;
-  --black: #313131;
+  --gray: #8d8d8d;
+  --light-gray: #dfdfdf;
+  --white: #f4f4f4;
+  --black: #212121;
 
+  /* cores com transparência */
   --gree-alpha: #00ff12b8;
   --red-alpha: #ff0000b8;
   --yellow-alpha: #ffe57bb8;
@@ -18,7 +21,8 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
+  background-color: var(--white);
 }
 
 .divider {
@@ -29,8 +33,6 @@ html {
 }
 
 .left-container {
-  width: 250px;
-  height: 250px;
   translate: -45px;
 }
 
@@ -95,7 +97,7 @@ stop {
 .blue .object-1 {
   background: var(--gree-alpha);
   left: 295px;
-  top: 20px;
+  top: 0px;
 }
 .yellow .object-1 {
   background: var(--yellow-alpha);
@@ -105,7 +107,7 @@ stop {
 .red .object-1 {
   background: var(--purple-alpha);
   left: 295px;
-  top: 20px;
+  top: -20px;
 }
 
 .object-1::before {
@@ -285,16 +287,6 @@ stop {
   transition: all 1.5s;
 }
 
-.rotate-90 {
-  transform: rotate(-90deg);
-  transition: all 1.5s;
-}
-
-.rotate-275 {
-  transform: rotate(-275deg);
-  transition: all 1.5s;
-}
-
 .rotate-135 {
   transform: rotate(120deg);
   transition: all 1.5s;
@@ -308,17 +300,6 @@ stop {
 .rotate-360 {
   transform: rotate(360deg);
   transition: all 1.5s;
-}
-
-@keyframes rotate-360 {
-  0% {
-    transform: rotate(0deg);  
-  }
-
-  100% {
-    transform: rotate(360deg);  
-    transition: all 1.5s;
-  }
 }
 
 .blur-container {
@@ -339,6 +320,7 @@ stop {
     filter: blur(0px);
   }
 }
+
 .light-blur-container {
   animation-name: light-blur-container;
   animation-duration: 1.5s;

@@ -7,13 +7,15 @@ function changeSelected(e) {
     //rotaciona as bolinhas
     document.querySelector('#circle-object-container').classList.add("rotate-360");
 
-    //muda as classes que rotacionam os sofás
-    document.querySelector('#couch-rotable-1').removeAttribute("class")
-    document.querySelector('#couch-rotable-1').classList.add("couch-rotable-1", "rotate-0");
-    document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-275")
-    document.querySelector('#couch-rotable-2').classList.add("rotate-90")
-    document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-90")
-    document.querySelector('#couch-rotable-3').classList.add("rotate-275")
+    //rotaciona o sofá
+    document.querySelector('#couch-rotable-1').classList.add("rotate-360");
+
+    //troca o sofá para azul
+    setTimeout(() => {
+      document.querySelector('#couch-rotable-1 img').src = "images/sofa-azul.png";
+      document.querySelector('#couch-rotable-1 img').alt = "Sofá azul";
+      document.querySelector('#couch-rotable-1 img').title = "Sofá azul";
+    }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
@@ -33,6 +35,7 @@ function changeSelected(e) {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
       document.querySelector('.right-items-container').classList.remove("light-blur-container");
       document.querySelector('#circle-object-container').classList.remove("rotate-360");
+      document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
     }, 1500);
   }
   if (e.target.alt === "Sofá Amarelo" || e.target.id === "Sofá Amarelo") {
@@ -43,13 +46,15 @@ function changeSelected(e) {
     //rotaciona as bolinhas
     document.querySelector('#circle-object-container').classList.add("rotate-360");
 
-    //muda as classes que rotacionam os sofás
-    document.querySelector('#couch-rotable-2').removeAttribute("class")
-    document.querySelector('#couch-rotable-2').classList.add("couch-rotable-2", "rotate-0");
-    document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-90")
-    document.querySelector('#couch-rotable-1').classList.add("rotate-275")
-    document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-275")
-    document.querySelector('#couch-rotable-3').classList.add("rotate-90")
+    //rotaciona o sofá
+    document.querySelector('#couch-rotable-1').classList.add("rotate-360");
+
+    //troca o sofá para amarelo
+    setTimeout(() => {
+      document.querySelector('#couch-rotable-1 img').src = "images/sofa-amarelo.png";
+      document.querySelector('#couch-rotable-1 img').alt = "Sofá amarelo";
+      document.querySelector('#couch-rotable-1 img').title = "Sofá amarelo";
+    }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
@@ -69,6 +74,7 @@ function changeSelected(e) {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
       document.querySelector('.right-items-container').classList.remove("light-blur-container");
       document.querySelector('#circle-object-container').classList.remove("rotate-360");
+      document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
     }, 1500);
   }
   if (e.target.alt === "Sofá Vermelho" || e.target.id === "Sofá Vermelho") {
@@ -79,13 +85,15 @@ function changeSelected(e) {
     //rotaciona as bolinhas
     document.querySelector('#circle-object-container').classList.add("rotate-360");
 
-    //muda as classes que rotacionam os sofás
-    document.querySelector('#couch-rotable-3').removeAttribute("class")
-    document.querySelector('#couch-rotable-3').classList.add("couch-rotable-3", "rotate-0");
-    document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-275")
-    document.querySelector('#couch-rotable-1').classList.add("rotate-90")
-    document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-90")
-    document.querySelector('#couch-rotable-2').classList.add("rotate-275")
+    //rotaciona o sofá
+    document.querySelector('#couch-rotable-1').classList.add("rotate-360");
+
+    //troca o sofá para vermelho
+    setTimeout(() => {
+      document.querySelector('#couch-rotable-1 img').src = "images/sofa-vermelho.png";
+      document.querySelector('#couch-rotable-1 img').alt = "Sofá vermelho";
+      document.querySelector('#couch-rotable-1 img').title = "Sofá vermelho";
+    }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
@@ -105,6 +113,7 @@ function changeSelected(e) {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
       document.querySelector('.right-items-container').classList.remove("light-blur-container");
       document.querySelector('#circle-object-container').classList.remove("rotate-360");
+      document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
     }, 1500);
   }
 }
