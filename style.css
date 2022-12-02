@@ -274,14 +274,19 @@ stop {
   transition: all 1.5s;
 }
 
-.blur-container {
-  animation-name: blur-container;
+.blur-effect-translate {
+  animation-name: blur-effect-translate;
   animation-duration: 1.5s;
   transition-timing-function: linear;
 }
-@keyframes blur-container {
+
+@keyframes blur-effect-translate {
   0% {
     filter: blur(5px);
+  }
+
+  40% {
+    translate: -100px -100px;
   }
 
   70% {
@@ -290,15 +295,17 @@ stop {
 
   100% {
     filter: blur(0px);
+    translate: 0px;
   }
 }
 
-.light-blur-container {
-  animation-name: light-blur-container;
+.light-blur-effect {
+  animation-name: light-blur-effect;
   animation-duration: 1.5s;
   transition-timing-function: linear;
 }
-@keyframes light-blur-container {
+
+@keyframes light-blur-effect {
   0% {
     filter: blur(3px);
   }

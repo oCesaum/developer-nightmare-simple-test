@@ -7,8 +7,8 @@ function disableButtons(prop) {
 function changeSelected(e) {
   disableButtons(true)
   //adiciona o efeito de blur
-  document.querySelector('#left-object-rotable-container').classList.add("blur-container");
-  document.querySelector('.right-items-container').classList.add("light-blur-container");
+  document.querySelector('#left-object-rotable-container').classList.add("blur-effect-translate");
+  document.querySelector('.right-items-container').classList.add("light-blur-effect");
 
   //rotaciona os círculos
   document.querySelector('#circle-object-container').classList.add("rotate-360");
@@ -84,8 +84,8 @@ function changeSelected(e) {
 
   //remove o efeito de blur e 360
   setTimeout(() => {
-    document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
-    document.querySelector('.right-items-container').classList.remove("light-blur-container");
+    document.querySelector('#left-object-rotable-container').classList.remove("blur-effect-translate")
+    document.querySelector('.right-items-container').classList.remove("light-blur-effect");
     document.querySelector('#circle-object-container').classList.remove("rotate-360");
     document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
 
