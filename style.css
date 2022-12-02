@@ -77,12 +77,6 @@ stop {
   stop-color: var(--red);
 }
 
-.left-object-rotable-container-limiter {
-  height: 440px;
-  width: 500px;
-  overflow: hidden;
-}
-
 .left-object-rotable-container {
   width: 350px;
   height: 350px;
@@ -90,30 +84,26 @@ stop {
   margin-right: 50px;
 }
 
-.blue .object-1 {
+.object-1, .object-2 {
   width: 55px;
   height: 55px;
-  background: var(--gree-alpha);
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: relative;
+  transition: all 1.5s;
+}
+
+.blue .object-1 {
+  background: var(--gree-alpha);
   left: 295px;
   top: 20px;
 }
 .yellow .object-1 {
-  width: 55px;
-  height: 55px;
   background: var(--yellow-alpha);
-  border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
   left: 340px;
   top: 0px;
 }
 .red .object-1 {
-  width: 55px;
-  height: 55px;
   background: var(--purple-alpha);
-  border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
   left: 295px;
   top: 20px;
 }
@@ -130,29 +120,17 @@ stop {
 }
 
 .blue .object-2 {
-  width: 55px;
-  height: 55px;
   background: var(--red-alpha);
-  border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
   left: 50px;
   top: 215px;
 }
 .yellow .object-2 {
-  width: 55px;
-  height: 55px;
   background: var(--blue-alpha);
-  border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
-  left: 120px;
-  top: 175px;
+  left: 135px;
+  top: 230px;
 }
 .red .object-2 {
-  width: 55px;
-  height: 55px;
   background: var(--blue-alpha);
-  border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
   left: 55px;
   top: 220px;
 }
@@ -327,10 +305,26 @@ stop {
   transition: all 1.5s;
 }
 
+.rotate-360 {
+  transform: rotate(360deg);
+  transition: all 1.5s;
+}
+
+@keyframes rotate-360 {
+  0% {
+    transform: rotate(0deg);  
+  }
+
+  100% {
+    transform: rotate(360deg);  
+    transition: all 1.5s;
+  }
+}
+
 .blur-container {
   animation-name: blur-container;
   animation-duration: 1.5s;
-  transition-timing-function: linear;;
+  transition-timing-function: linear;
 }
 @keyframes blur-container {
   0% {
@@ -348,7 +342,7 @@ stop {
 .light-blur-container {
   animation-name: light-blur-container;
   animation-duration: 1.5s;
-  transition-timing-function: linear;;
+  transition-timing-function: linear;
 }
 @keyframes light-blur-container {
   0% {

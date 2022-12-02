@@ -1,10 +1,13 @@
 function changeSelected(e) {
   if (e.target.alt === "Sofá Azul" || e.target.id === "Sofá Azul") {
-    //troca o sofá principal para azul
-    document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
-    document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+    //adiciona o efeito de blur
+    document.querySelector('#left-object-rotable-container').classList.add("blur-container");
+    document.querySelector('.right-items-container').classList.add("light-blur-container");
 
-    //muda as casses que rotacionam os sofás
+    //rotaciona as bolinhas
+    document.querySelector('#circle-object-container').classList.add("rotate-360");
+
+    //muda as classes que rotacionam os sofás
     document.querySelector('#couch-rotable-1').removeAttribute("class")
     document.querySelector('#couch-rotable-1').classList.add("couch-rotable-1", "rotate-0");
     document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-275")
@@ -12,6 +15,7 @@ function changeSelected(e) {
     document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-90")
     document.querySelector('#couch-rotable-3').classList.add("rotate-275")
 
+    //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
     document.querySelector('#main-bg').classList.add("main-bg", "rotate-0");
 
@@ -24,17 +28,22 @@ function changeSelected(e) {
     document.querySelector('.yellow-couch').classList.remove("active");
     document.querySelector('.red-couch').classList.remove("active");
 
+    //remove o efeito de blur
     setTimeout(() => {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
-      document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+      document.querySelector('.right-items-container').classList.remove("light-blur-container");
+      document.querySelector('#circle-object-container').classList.remove("rotate-360");
     }, 1500);
   }
   if (e.target.alt === "Sofá Amarelo" || e.target.id === "Sofá Amarelo") {
-    //troca o sofá principal para amarelo
-    document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
-    document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+    //adiciona o efeito de blurelo
+    document.querySelector('#left-object-rotable-container').classList.add("blur-container");
+    document.querySelector('.right-items-container').classList.add("light-blur-container");
 
-    //muda as casses que rotacionam os sofás
+    //rotaciona as bolinhas
+    document.querySelector('#circle-object-container').classList.add("rotate-360");
+
+    //muda as classes que rotacionam os sofás
     document.querySelector('#couch-rotable-2').removeAttribute("class")
     document.querySelector('#couch-rotable-2').classList.add("couch-rotable-2", "rotate-0");
     document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-90")
@@ -42,6 +51,7 @@ function changeSelected(e) {
     document.querySelector('#couch-rotable-3').classList.remove("rotate-0", "rotate-275")
     document.querySelector('#couch-rotable-3').classList.add("rotate-90")
 
+    //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
     document.querySelector('#main-bg').classList.add("main-bg", "rotate-135");
 
@@ -54,17 +64,22 @@ function changeSelected(e) {
     document.querySelector('.yellow-couch').classList.add("active");
     document.querySelector('.red-couch').classList.remove("active");
 
+    //remove o efeito de blur
     setTimeout(() => {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
-      document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+      document.querySelector('.right-items-container').classList.remove("light-blur-container");
+      document.querySelector('#circle-object-container').classList.remove("rotate-360");
     }, 1500);
   }
   if (e.target.alt === "Sofá Vermelho" || e.target.id === "Sofá Vermelho") {
-    //troca o sofá principal para vermelho
-    document.querySelector('#left-object-rotable-container').classList.toggle("blur-container");
-    document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+    //adiciona o efeito de blurelho
+    document.querySelector('#left-object-rotable-container').classList.add("blur-container");
+    document.querySelector('.right-items-container').classList.add("light-blur-container");
 
-    //muda as casses que rotacionam os sofás
+    //rotaciona as bolinhas
+    document.querySelector('#circle-object-container').classList.add("rotate-360");
+
+    //muda as classes que rotacionam os sofás
     document.querySelector('#couch-rotable-3').removeAttribute("class")
     document.querySelector('#couch-rotable-3').classList.add("couch-rotable-3", "rotate-0");
     document.querySelector('#couch-rotable-1').classList.remove("rotate-0", "rotate-275")
@@ -72,6 +87,7 @@ function changeSelected(e) {
     document.querySelector('#couch-rotable-2').classList.remove("rotate-0", "rotate-90")
     document.querySelector('#couch-rotable-2').classList.add("rotate-275")
 
+    //remove as classes do main-bg e volta para as classes padrões
     document.querySelector('#main-bg').removeAttribute("class")
     document.querySelector('#main-bg').classList.add("main-bg", "rotate-255");
 
@@ -84,9 +100,11 @@ function changeSelected(e) {
     document.querySelector('.yellow-couch').classList.remove("active");
     document.querySelector('.red-couch').classList.add("active");
 
+    //remove o efeito de blur
     setTimeout(() => {
       document.querySelector('#left-object-rotable-container').classList.remove("blur-container")
-      document.querySelector('.right-items-container').classList.toggle("light-blur-container");
+      document.querySelector('.right-items-container').classList.remove("light-blur-container");
+      document.querySelector('#circle-object-container').classList.remove("rotate-360");
     }, 1500);
   }
 }
