@@ -6,15 +6,15 @@ function disableButtons(prop) {
 
 function changeSelected(e) {
   disableButtons(true)
-  //adiciona o efeito de blur
-  document.querySelector('#left-object-rotable-container').classList.add("blur-effect-translate");
-  document.querySelector('.right-items-container').classList.add("light-blur-effect");
+  //adiciona o efeito de blur e translate
+  document.querySelector('#circle-object-container').classList.add("effect-translate");
 
   //rotaciona os círculos
   document.querySelector('#circle-object-container').classList.add("rotate-360");
 
   //rotaciona o sofá
   document.querySelector('#couch-rotable-1').classList.add("rotate-360");
+  document.querySelector('#couch-img').classList.add("rotate-360-negative");
 
   if (e.target.alt === "Sofá Azul" || e.target.id === "Sofá-Azul") {
     //troca o sofá para azul
@@ -25,8 +25,8 @@ function changeSelected(e) {
     }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-135", "rotate-255");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-0");
+    document.querySelector('#main-bg').classList.remove("rotate-62", "rotate-134");
+    document.querySelector('#main-bg').classList.add("main-bg", "rotate-10");
 
     //troca a cor principal para azul
     document.querySelector('#divider').classList.remove("yellow", "red");
@@ -47,8 +47,8 @@ function changeSelected(e) {
     }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-0", "rotate-255");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-135");
+    document.querySelector('#main-bg').classList.remove("rotate-10", "rotate-134");
+    document.querySelector('#main-bg').classList.add("main-bg", "rotate-62");
 
     //troca a cor principal para amarelo
     document.querySelector('#divider').classList.remove("blue", "red");
@@ -69,8 +69,8 @@ function changeSelected(e) {
     }, 550);
 
     //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-0", "rotate-135");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-255");
+    document.querySelector('#main-bg').classList.remove("rotate-10", "rotate-62");
+    document.querySelector('#main-bg').classList.add("main-bg", "rotate-134");
 
     //troca a cor principal para vermelho
     document.querySelector('#divider').classList.remove("blue", "yellow");
@@ -84,11 +84,11 @@ function changeSelected(e) {
 
   //remove o efeito de blur e 360
   setTimeout(() => {
-    document.querySelector('#left-object-rotable-container').classList.remove("blur-effect-translate")
-    document.querySelector('.right-items-container').classList.remove("light-blur-effect");
+    document.querySelector('#circle-object-container').classList.remove("effect-translate")
     document.querySelector('#circle-object-container').classList.remove("rotate-360");
     document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
+    document.querySelector('#couch-img').classList.remove("rotate-360-negative");
 
     disableButtons(false)
-  }, 1501);
+  }, 2001);
 }

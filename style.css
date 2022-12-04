@@ -3,7 +3,7 @@
   --blue: #228be6;
   --dark-blue: #0d0099;
   --yellow: #fbca05;
-  --dark-yellow: #fbb005;
+  --dark-yellow: #d69600;
   --red: #e64980;
   --dark-red: #a30808;
   --purple: #8660f3;
@@ -11,13 +11,10 @@
   --light-gray: #dfdfdf;
   --white: #f4f4f4;
   --black: #212121;
-
-  /* cores com transparência */
-  --gree-alpha: #00ff12b8;
-  --red-alpha: #ff0000b8;
-  --yellow-alpha: #ffe57bb8;
-  --blue-alpha: #228be6b8;
-  --purple-alpha: #8660f3b8;
+  --gree: #00ff12;
+  --yellow: #ffe57b;
+  --blue: #228be6;
+  --purple: #8660f3;
 }
 
 html {
@@ -38,52 +35,53 @@ html {
 
 .left-title-container {
   display: flex;
-  grid-template-columns: 150px 100px;
-  max-width: 150px;
-  height: 100px;
+  width: 230px;
+  height: 180px;
   overflow: hidden;
   position: absolute;
   top: 100px;
   left: 40px;
+  font-size: 30px;
+
 }
 
 .left-title-1, .left-title-2, .left-title-3 {
   color: var(--light-gray);
-  width: 150px;
-  height: 100px;
   display: block;
-  transition: all 1.5s;
+  transition: all 2s;
 }
 
 .left-title-1 h1, .left-title-2 h1, .left-title-3 h1 {
-  width: 150px;
-  height: 100px;
+  width: 230px;
+  height: 180px;
 }
 
-.blue .left-title-1 {
-  margin-left: 0px;
+.blue .left-title-1, .blue .left-title-2, .blue .left-title-3 {
+  transform: translate(0);
 }
 
-.yellow .left-title-1 {
-  margin-left: -150px;
+.yellow .left-title-1, .yellow .left-title-2, .yellow .left-title-3 {
+  transform: translate(-229px);
+  color: white;
 }
 
-.red .left-title-1 {
-  margin-left: -300px;
+.red .left-title-1, .red .left-title-2, .red .left-title-3 {
+  transform: translate(-460px);
 }
 
 .main-bg{
   position: absolute;
-  top: -60px;
-  left: -120px;
-  height: 450px;
-  rotate: 15deg;
+  top: -130px;
+  left: -215px;
+  width: 600px;
+  height: 600px;
   z-index: -1;
   transition: color 1.5s;
+  transform: rotate(-10deg);
 }
 
 stop {
-  transition: all 1.5s linear;
+  transition: all 2s linear;
 }
 
 .blue #stop1 {
@@ -95,11 +93,11 @@ stop {
 }
 
 .yellow #stop1 {
-  stop-color: var(--dark-yellow);
+  stop-color: var(--yellow);
 }
 
 .yellow #stop2 {
-  stop-color: var(--yellow);
+  stop-color: var(--dark-yellow);
 }
 
 .red #stop1 {
@@ -118,25 +116,26 @@ stop {
 }
 
 .object-1, .object-2 {
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
-  position: relative;
-  transition: all 1.5s;
+  position: absolute;
+  transition: all 2s;
+  filter: blur(1px);
 }
 
 .blue .object-1 {
-  background: var(--gree-alpha);
-  left: 295px;
-  top: 0px;
+  background: var(--gree);
+  left: 265px;
+  top: 160px;
 }
 .yellow .object-1 {
-  background: var(--yellow-alpha);
+  background: var(--yellow);
   left: 340px;
   top: 0px;
 }
 .red .object-1 {
-  background: var(--purple-alpha);
+  background: var(--purple);
   left: 295px;
   top: -20px;
 }
@@ -144,10 +143,11 @@ stop {
 .object-1::before, .object-2::before {
   content: "";
   display: inline-block;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   position: relative;
-  top: -4px;
+  top: -2px;
+  left: -2px;
   background: rgba(0, 0, 0, 0%);
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23313131FF' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
 }
@@ -157,39 +157,20 @@ stop {
 }
 
 .blue .object-2 {
-  background: var(--red-alpha);
-  left: 50px;
-  top: 215px;
+  background: var(--dark-red);
+  left: 180px;
+  top: 350px;
+  z-index: 1;
 }
 .yellow .object-2 {
-  background: var(--blue-alpha);
+  background: var(--blue);
   left: 135px;
   top: 230px;
 }
 .red .object-2 {
-  background: var(--blue-alpha);
+  background: var(--blue);
   left: 55px;
   top: 220px;
-}
-
-#couch-rotable-1, #couch-rotable-2, #couch-rotable-3 {
-  height: 450px;
-  width: 450px;
-}
-
-#couch-rotable-1 {
-  margin-top: -350px;
-  margin-left: -130px;
-}
-
-#couch-rotable-2 {
-  margin-top: -450px;
-  margin-left: -135px;
-} 
-
-#couch-rotable-3 {
-  margin-top: -450px;
-  margin-left: -120px;
 }
 
 .couch-img, .couch-items img, .select-couch-container button img {
@@ -198,9 +179,9 @@ stop {
 
 #couch-img {
   width: 150px;
-  position: relative;
-  top: 380px;
-  left: 335px;
+  position: absolute;
+  top: 255px;
+  left: 250px;
 }
 
 .right-title {
@@ -226,17 +207,17 @@ stop {
 
 .blue #items-couch-container-1 {
   margin-left: 0;
-  transition: all 1.5s;
+  transition: all 2s;
 }
 
 .yellow #items-couch-container-1 {
   margin-left: -500px;
-  transition: all 1.5s;
+  transition: all 2s;
 }
 
 .red #items-couch-container-1 {
   margin-left: -1000px;
-  transition: all 1.5s;
+  transition: all 2s;
 }
 
 .couch-items {
@@ -282,63 +263,44 @@ stop {
   height: 35px;
 }
 
-.rotate-0 {
-  transform: rotate(0deg);
-  transition: all 1.5s;
+.rotate-10 {
+  transform: rotate(-10deg);
+  transition: all 2s;
 }
 
-.rotate-135 {
-  transform: rotate(120deg);
-  transition: all 1.5s;
+.rotate-62 {
+  transform: rotate(62deg);
+  transition: all 2s;
 }
 
-.rotate-255 {
-  transform: rotate(235deg);
-  transition: all 1.5s;
+.rotate-134 {
+  transform: rotate(134deg);
+  transition: all 2s;
 }
 
 .rotate-360 {
   transform: rotate(360deg);
-  transition: all 1.5s;
+  transition: all 2s;
 }
 
-.blur-effect-translate {
-  animation-name: blur-effect-translate;
+.rotate-360-negative {
+  transform: rotate(-360deg);
+  transition: all 2s;
+}
+
+.effect-translate {
+  animation-name: effect-translate;
   animation-duration: 1.5s;
   transition-timing-function: linear;
 }
 
-@keyframes blur-effect-translate {
-  0% {
-    filter: blur(5px);
-  }
+@keyframes effect-translate {
 
   40% {
     translate: -100px -100px;
   }
 
-  70% {
-    filter: blur(3px);
-  }
-
   100% {
-    filter: blur(0px);
     translate: 0px;
-  }
-}
-
-.light-blur-effect {
-  animation-name: light-blur-effect;
-  animation-duration: 1.5s;
-  transition-timing-function: linear;
-}
-
-@keyframes light-blur-effect {
-  0% {
-    filter: blur(3px);
-  }
-
-  100% {
-    filter: blur(0px);
   }
 }
