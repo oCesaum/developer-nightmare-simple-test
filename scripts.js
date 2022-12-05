@@ -6,31 +6,72 @@ function disableButtons(prop) {
 
 function changeSelected(e) {
   disableButtons(true)
-  //adiciona o efeito de blur e translate
-  document.querySelector('#circle-object-container').classList.add("effect-translate");
+
+  //adiciona transition aos elementos que serão animados
+  document.querySelector('#main-bg').style.transition = '1.5s'
+  document.querySelector('#circle-object-container-1').style.transition = '1.5s'
+  document.querySelector('#circle-object-container-2').style.transition = '1.5s'
+  document.querySelector('#couch-rotable-1').style.transition = '1.5s'
+  document.querySelector('#couch-rotable-2').style.transition = '1.5s'
+  document.querySelector('#couch-img-1').style.transition = '1.5s'
+  document.querySelector('#couch-img-2').style.transition = '1.5s'
+  
+  //rotaciona o main-bg
+  const mainBgRotation = document.querySelector("#main-bg").style.rotate
+  if (mainBgRotation) {
+    document.querySelector("#main-bg").style.rotate = (parseFloat(mainBgRotation) + 72) + "deg";
+  } else {
+    document.querySelector("#main-bg").style.rotate = "72deg";
+  }
+
+  document.querySelector('#divider').classList.add("divider");
 
   //rotaciona os círculos
-  document.querySelector('#circle-object-container').classList.add("rotate-360");
+  // const circleRotation = document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate
+  // if (circleRotation) {
+  //   document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate = (parseFloat(circleRotation) + 180) + "deg";
+  // } else {
+  //   document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate = "0deg";
+  // }
 
   //rotaciona o sofá
-  document.querySelector('#couch-rotable-1').classList.add("rotate-360");
-  document.querySelector('#couch-img').classList.add("rotate-360-negative");
+  const notVisibleCouchRotation = document.querySelector(".notVisible").style.rotate
+  if (notVisibleCouchRotation) {
+    document.querySelector(".notVisible").style.rotate = (parseFloat(notVisibleCouchRotation) + 180) + "deg";
+  } else {
+    document.querySelector(".notVisible").style.rotate = "180deg";
+  }
+  const notVisibleCouchNegativeRotation = document.querySelector(".notVisible .couch-img").style.rotate
+  if (notVisibleCouchNegativeRotation) {
+    document.querySelector(".notVisible .couch-img").style.rotate = (parseFloat(notVisibleCouchNegativeRotation) + -180) + "deg";
+  } else {
+    document.querySelector(".notVisible .couch-img").style.rotate = "-180deg";
+  }
+  
+  const visibleCouchRotation = document.querySelector(".visible").style.rotate
+  if (visibleCouchRotation) {
+    document.querySelector(".visible").style.rotate = (parseFloat(visibleCouchRotation) + 180) + "deg";
+  } else {
+    document.querySelector(".visible").style.rotate = "180deg";
+  }
+  const visibleCouchNegativeRotation = document.querySelector(".visible .couch-img").style.rotate
+  if (visibleCouchNegativeRotation) {
+    document.querySelector(".visible .couch-img").style.rotate = (parseFloat(visibleCouchNegativeRotation) + -180) + "deg";
+  } else {
+    document.querySelector(".visible .couch-img").style.rotate = "-180deg";
+  }
 
   if (e.target.alt === "Sofá Azul" || e.target.id === "Sofá-Azul") {
     //troca o sofá para azul
     setTimeout(() => {
-      document.querySelector('#couch-img').src = "images/sofa-azul.png";
-      document.querySelector('#couch-img').alt = "Sofá azul";
-      document.querySelector('#couch-img').title = "Sofá azul";
-    }, 550);
-
-    //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-62", "rotate-134");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-10");
+      document.querySelector('.visible .couch-img').src = "images/sofa-azul.png";
+      document.querySelector('.visible .couch-img').alt = "Sofá azul";
+      document.querySelector('.visible .couch-img').title = "Sofá azul";
+    }, 150);
 
     //troca a cor principal para azul
     document.querySelector('#divider').classList.remove("yellow", "red");
-    document.querySelector('#divider').classList.add("divider", "blue");
+    document.querySelector('#divider').classList.add("blue");
 
     //remove classe ativo de todas as cores e adiciona em azul
     document.querySelector('.blue-couch').classList.add("active");
@@ -41,18 +82,14 @@ function changeSelected(e) {
   if (e.target.alt === "Sofá Amarelo" || e.target.id === "Sofá-Amarelo") {
     //troca o sofá para amarelo
     setTimeout(() => {
-      document.querySelector('#couch-img').src = "images/sofa-amarelo.png";
-      document.querySelector('#couch-img').alt = "Sofá amarelo";
-      document.querySelector('#couch-img').title = "Sofá amarelo";
-    }, 550);
-
-    //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-10", "rotate-134");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-62");
+      document.querySelector('.visible .couch-img').src = "images/sofa-amarelo.png";
+      document.querySelector('.visible .couch-img').alt = "Sofá amarelo";
+      document.querySelector('.visible .couch-img').title = "Sofá amarelo";
+    }, 150);
 
     //troca a cor principal para amarelo
     document.querySelector('#divider').classList.remove("blue", "red");
-    document.querySelector('#divider').classList.add("divider", "yellow");
+    document.querySelector('#divider').classList.add("yellow");
 
     //remove classe ativo de todas as cores e adiciona em amarelo
     document.querySelector('.blue-couch').classList.remove("active");
@@ -63,18 +100,14 @@ function changeSelected(e) {
   if (e.target.alt === "Sofá Vermelho" || e.target.id === "Sofá-Vermelho") {
     //troca o sofá para vermelho
     setTimeout(() => {
-      document.querySelector('#couch-img').src = "images/sofa-vermelho.png";
-      document.querySelector('#couch-img').alt = "Sofá vermelho";
-      document.querySelector('#couch-img').title = "Sofá vermelho";
-    }, 550);
-
-    //remove as classes do main-bg e volta para as classes padrões da cor
-    document.querySelector('#main-bg').classList.remove("rotate-10", "rotate-62");
-    document.querySelector('#main-bg').classList.add("main-bg", "rotate-134");
+      document.querySelector('.visible .couch-img').src = "images/sofa-vermelho.png";
+      document.querySelector('.visible .couch-img').alt = "Sofá vermelho";
+      document.querySelector('.visible .couch-img').title = "Sofá vermelho";
+    }, 150);
 
     //troca a cor principal para vermelho
     document.querySelector('#divider').classList.remove("blue", "yellow");
-    document.querySelector('#divider').classList.add("divider", "red");
+    document.querySelector('#divider').classList.add("red");
 
     //remove classe ativo de todas as cores e adiciona em vermelho
     document.querySelector('.blue-couch').classList.remove("active");
@@ -82,13 +115,12 @@ function changeSelected(e) {
     document.querySelector('.red-couch').classList.add("active");
   }
 
-  //remove o efeito de blur e 360
   setTimeout(() => {
-    document.querySelector('#circle-object-container').classList.remove("effect-translate")
-    document.querySelector('#circle-object-container').classList.remove("rotate-360");
-    document.querySelector('#couch-rotable-1').classList.remove("rotate-360");
-    document.querySelector('#couch-img').classList.remove("rotate-360-negative");
+    document.querySelector('#couch-rotable-1').classList.toggle("notVisible");
+    document.querySelector('#couch-rotable-1').classList.toggle("visible");
+    document.querySelector('#couch-rotable-2').classList.toggle("notVisible");
+    document.querySelector('#couch-rotable-2').classList.toggle("visible");
 
     disableButtons(false)
-  }, 2001);
+  }, 1501);
 }

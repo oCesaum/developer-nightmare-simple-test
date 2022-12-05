@@ -39,7 +39,7 @@ html {
   height: 180px;
   overflow: hidden;
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 40px;
   font-size: 30px;
 
@@ -48,7 +48,7 @@ html {
 .left-title-1, .left-title-2, .left-title-3 {
   color: var(--light-gray);
   display: block;
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
 .left-title-1 h1, .left-title-2 h1, .left-title-3 h1 {
@@ -81,7 +81,8 @@ html {
 }
 
 stop {
-  transition: all 2s linear;
+  transition-duration: 1.5s;
+  transform-style: all;
 }
 
 .blue #stop1 {
@@ -108,6 +109,12 @@ stop {
   stop-color: var(--red);
 }
 
+#left-object-rotable-container-1, #left-object-rotable-container-2 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+}
+
 .left-object-rotable-container {
   width: 350px;
   height: 350px;
@@ -120,7 +127,7 @@ stop {
   height: 65px;
   border-radius: 59% 41% 37% 63% / 61% 54% 46% 39%;
   position: absolute;
-  transition: all 2s;
+  transition: all 1.5s;
   filter: blur(1px);
 }
 
@@ -173,15 +180,27 @@ stop {
   top: 220px;
 }
 
+#couch-rotable-1 {
+  transform: rotate(180deg);
+}
+
 .couch-img, .couch-items img, .select-couch-container button img {
   filter: drop-shadow(2px 4px 6px black);
 }
 
-#couch-img {
-  width: 150px;
+#couch-img-1 {
+  width: 160px;
   position: absolute;
   top: 255px;
-  left: 250px;
+  left: 235px;
+  transform: rotate(-180deg);
+}
+
+#couch-img-2 {
+  width: 160px;
+  position: absolute;
+  top: 255px;
+  left: 235px;
 }
 
 .right-title {
@@ -207,17 +226,17 @@ stop {
 
 .blue #items-couch-container-1 {
   margin-left: 0;
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
 .yellow #items-couch-container-1 {
   margin-left: -500px;
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
 .red #items-couch-container-1 {
   margin-left: -1000px;
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
 .couch-items {
@@ -265,27 +284,17 @@ stop {
 
 .rotate-10 {
   transform: rotate(-10deg);
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
 .rotate-62 {
   transform: rotate(62deg);
-  transition: all 2s;
+  transition: all 1.5s;
 }
 
-.rotate-134 {
-  transform: rotate(134deg);
-  transition: all 2s;
-}
-
-.rotate-360 {
-  transform: rotate(360deg);
-  transition: all 2s;
-}
-
-.rotate-360-negative {
-  transform: rotate(-360deg);
-  transition: all 2s;
+.rotate-180-negative {
+  transform: rotate(-180deg);
+  transition: all 1.5s;
 }
 
 .effect-translate {
