@@ -27,14 +27,33 @@ function changeSelected(e) {
   document.querySelector('#divider').classList.add("divider");
 
   //rotaciona os círculos
-  // const circleRotation = document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate
-  // if (circleRotation) {
-  //   document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate = (parseFloat(circleRotation) + 180) + "deg";
-  // } else {
-  //   document.querySelector("#circle-object-container-1", "#circle-object-container-2").style.rotate = "0deg";
-  // }
+  const circleRotation1 = document.querySelector("#circle-object-container-1").style.rotate
+  if (circleRotation1) {
+    document.querySelector("#circle-object-container-1").style.rotate = (parseFloat(circleRotation1) + 180) + "deg";
+  } else {
+    document.querySelector("#circle-object-container-1").style.rotate = "180deg";
+  }
+  const circleRotation2 = document.querySelector("#circle-object-container-2").style.rotate
+  if (circleRotation2) {
+    document.querySelector("#circle-object-container-2").style.rotate = (parseFloat(circleRotation2) + 180) + "deg";
+  } else {
+    document.querySelector("#circle-object-container-2").style.rotate = "180deg";
+  }
 
   //rotaciona o sofá
+  const visibleCouchRotation = document.querySelector(".visible").style.rotate
+  if (visibleCouchRotation) {
+    document.querySelector(".visible").style.rotate = (parseFloat(visibleCouchRotation) + 180) + "deg";
+  } else {
+    document.querySelector(".visible").style.rotate = "180deg";
+  }
+  const visibleCouchNegativeRotation = document.querySelector(".visible .couch-img").style.rotate
+  if (visibleCouchNegativeRotation) {
+    document.querySelector(".visible .couch-img").style.rotate = (parseFloat(visibleCouchNegativeRotation) -180) + "deg";
+  } else {
+    document.querySelector(".visible .couch-img").style.rotate = "-180deg";
+  }
+  
   const notVisibleCouchRotation = document.querySelector(".notVisible").style.rotate
   if (notVisibleCouchRotation) {
     document.querySelector(".notVisible").style.rotate = (parseFloat(notVisibleCouchRotation) + 180) + "deg";
@@ -47,26 +66,13 @@ function changeSelected(e) {
   } else {
     document.querySelector(".notVisible .couch-img").style.rotate = "-180deg";
   }
-  
-  const visibleCouchRotation = document.querySelector(".visible").style.rotate
-  if (visibleCouchRotation) {
-    document.querySelector(".visible").style.rotate = (parseFloat(visibleCouchRotation) + 180) + "deg";
-  } else {
-    document.querySelector(".visible").style.rotate = "180deg";
-  }
-  const visibleCouchNegativeRotation = document.querySelector(".visible .couch-img").style.rotate
-  if (visibleCouchNegativeRotation) {
-    document.querySelector(".visible .couch-img").style.rotate = (parseFloat(visibleCouchNegativeRotation) + -180) + "deg";
-  } else {
-    document.querySelector(".visible .couch-img").style.rotate = "-180deg";
-  }
 
   if (e.target.alt === "Sofá Azul" || e.target.id === "Sofá-Azul") {
     //troca o sofá para azul
     setTimeout(() => {
-      document.querySelector('.visible .couch-img').src = "images/sofa-azul.png";
-      document.querySelector('.visible .couch-img').alt = "Sofá azul";
-      document.querySelector('.visible .couch-img').title = "Sofá azul";
+      document.querySelector('.notVisible .couch-img').src = "images/sofa-azul.png";
+      document.querySelector('.notVisible .couch-img').alt = "Sofá azul";
+      document.querySelector('.notVisible .couch-img').title = "Sofá azul";
     }, 150);
 
     //troca a cor principal para azul
@@ -82,9 +88,9 @@ function changeSelected(e) {
   if (e.target.alt === "Sofá Amarelo" || e.target.id === "Sofá-Amarelo") {
     //troca o sofá para amarelo
     setTimeout(() => {
-      document.querySelector('.visible .couch-img').src = "images/sofa-amarelo.png";
-      document.querySelector('.visible .couch-img').alt = "Sofá amarelo";
-      document.querySelector('.visible .couch-img').title = "Sofá amarelo";
+      document.querySelector('.notVisible .couch-img').src = "images/sofa-amarelo.png";
+      document.querySelector('.notVisible .couch-img').alt = "Sofá amarelo";
+      document.querySelector('.notVisible .couch-img').title = "Sofá amarelo";
     }, 150);
 
     //troca a cor principal para amarelo
@@ -100,9 +106,9 @@ function changeSelected(e) {
   if (e.target.alt === "Sofá Vermelho" || e.target.id === "Sofá-Vermelho") {
     //troca o sofá para vermelho
     setTimeout(() => {
-      document.querySelector('.visible .couch-img').src = "images/sofa-vermelho.png";
-      document.querySelector('.visible .couch-img').alt = "Sofá vermelho";
-      document.querySelector('.visible .couch-img').title = "Sofá vermelho";
+      document.querySelector('.notVisible .couch-img').src = "images/sofa-vermelho.png";
+      document.querySelector('.notVisible .couch-img').alt = "Sofá vermelho";
+      document.querySelector('.notVisible .couch-img').title = "Sofá vermelho";
     }, 150);
 
     //troca a cor principal para vermelho
@@ -116,10 +122,10 @@ function changeSelected(e) {
   }
 
   setTimeout(() => {
-    document.querySelector('#couch-rotable-1').classList.toggle("notVisible");
     document.querySelector('#couch-rotable-1').classList.toggle("visible");
-    document.querySelector('#couch-rotable-2').classList.toggle("notVisible");
+    document.querySelector('#couch-rotable-1').classList.toggle("notVisible");
     document.querySelector('#couch-rotable-2').classList.toggle("visible");
+    document.querySelector('#couch-rotable-2').classList.toggle("notVisible");
 
     disableButtons(false)
   }, 1501);
